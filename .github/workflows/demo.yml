@@ -6,12 +6,13 @@ on:
       mensaje:
         description: "Mensaje de texto a imprimir por consola"
         required: true
-        default: "Hola desde GitHub Actions"
+        default: "Hola desde GitHub Actions!"
         type: string
 
 jobs:
   imprimir-mensaje:
     runs-on: ubuntu-latest
     steps:
-      - name: Imprimir mensaje
-        run: echo "Mensaje recibido: ${{ github.event.inputs.mensaje }}"
+      - name: Imprimir mensaje por consola
+        run: |
+          echo "Mensaje recibido: ${{ inputs.mensaje }}"
